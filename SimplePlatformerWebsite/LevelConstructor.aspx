@@ -7,8 +7,8 @@
         }
 
         td.editorCell {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
         }
 
         .emptyCell {
@@ -37,6 +37,7 @@
 
         .btnmargin {
             margin-top: 20px;
+            margin-bottom:  20px;
         }
     </style>
 </asp:Content>
@@ -49,7 +50,7 @@
             <table id="levelEditorTable" border="1">
             </table>
         </div>
-        <div style="position: fixed; left: 20px; top: 160px;">
+        <div style="position: fixed; left: 20px; top: 160px; background-color: white; border: 2px dashed black; padding: 15px;">
             Выберите режим ввода:<br />
             <input type="radio" name="inputMode" id="inputModeGround" checked /> Земля<br />
             <input type="radio" name="inputMode" id="inputModeGem" /> Ценность<br />
