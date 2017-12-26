@@ -28,6 +28,7 @@ public partial class LevelConstructor : System.Web.UI.Page
         {
             LevelDataLabel.Text = (string)Session["LevelName"] + ", " + (int)Session["XSize"] + "x" + (int)Session["YSize"];
             LevelNameTextBox.Text = (string)Session["LevelName"];
+            LevelYSizeTextBox.Text = ((int)Session["YSize"]).ToString();
             VariablesLiteral.Text = "" +
                 "<script type='text/javascript'>" +
                 "   window.levelName = '" + (string)Session["LevelName"] + "';" +
@@ -39,6 +40,8 @@ public partial class LevelConstructor : System.Web.UI.Page
 
     protected void SaveLevelButton_Click(object sender, EventArgs e)
     {
+        int ySize = Convert.ToInt32(LevelYSizeTextBox.Text);
+
         XMLToCSharp.Level level = new XMLToCSharp.Level();
         level.Name = LevelNameTextBox.Text;
         level.Blocks = new List<XMLToCSharp.Block>();
@@ -48,7 +51,7 @@ public partial class LevelConstructor : System.Web.UI.Page
         {
             for (var col = 0; col < lines[row].Length; col++)
             {
-                int realY = (int)Session["YSize"] - row - 1;
+                int realY = ySize - row - 1;
                 switch (lines[row][col])
                 {
                     case '8':

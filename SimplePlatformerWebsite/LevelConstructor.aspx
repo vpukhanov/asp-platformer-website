@@ -58,6 +58,7 @@
             <input type="radio" name="inputMode" id="inputModeExit" /> Выход
         </div>
         <asp:TextBox runat="server" ID="LevelNameTextBox" Visible="False" />
+        <asp:TextBox runat="server" ID="LevelYSizeTextBox" Visible="False" />
         <asp:TextBox runat="server" ID="LevelDataTextBox" ClientIDMode="Static" CssClass="aspHidden" />
         <asp:Button runat="server" ID="SaveLevelButton" Text="Сохранить уровень" CssClass="btn btn-success btn-lg btnmargin" OnClick="SaveLevelButton_Click" />
     </form>

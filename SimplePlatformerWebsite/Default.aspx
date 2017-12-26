@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="Server">
     <div class="page-header">
-        <h1>Загрузить уровни <small>Доступно: 5</small></h1>
+        <h1>Загрузить уровни</h1>
     </div>
     <asp:ListView ID="LevelsListView" runat="server" DataSourceID="LevelsSqlDataSource">
         <LayoutTemplate>
@@ -17,7 +17,7 @@
         <ItemTemplate>
             <tr>
                 <td>
-                    <asp:Label runat="server" ID="LevelIDLabel" Text='<%#Eval("id") %>' />
+                    <asp:Label runat="server" ID="LevelIDLabel" Text='<%#Container.DisplayIndex + 1%>' />
                 </td>
                 <td>
                     <asp:HyperLink runat="server" ID="DownloadHyperLink" Text='<%#Eval("name") %>' NavigateUrl='<%#Eval("id", "~/DownloadLevel.aspx?id={0}") %>' />
